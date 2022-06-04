@@ -6,8 +6,8 @@ import WritersCarousel from "./component/WritersCarousel";
 
 function App() {
     return (
-        // <News/>
-        <WritersCarousel/>
+        <News/>
+        // <WritersCarousel/>
     );
 }
 
