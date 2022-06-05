@@ -15,7 +15,6 @@ import {createTheme, ThemeProvider} from '@mui/material/styles';
 import {Button} from "@mui/material";
 import {useEffect} from "react";
 
-
 const theme = createTheme();
 
 function SignInPage({login, token}) {
