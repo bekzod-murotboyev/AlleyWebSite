@@ -9,12 +9,14 @@ const api = ({dispatch}) => (next) => (action) => {
     }
     next(action)
     const {url, method, onSuccess, onFail, data} = action.payload
-    let token = localStorage.getItem('accessToken')
+    let token = localStorage.getItem('access')
+    let headers
+    if (token)
+        headers = {'Authorization': token}
 
-    let headers = token ? {'Authorization': 'Bearer ' + token} : ''
 
     axios({
-        baseURL:'http://50.116.20.197:9095/',
+        baseURL: 'http://50.116.20.197:9095/',
         url,
         method,
         data,

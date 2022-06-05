@@ -1,13 +1,16 @@
-
-
-import News from "./component/News";
-import WritersCarousel from "./component/WritersCarousel";
+import SignIn from "./page/SignIn";
+import Dashboard from "./page/Dashboard";
+import {Route, Routes} from "react-router";
 
 
 function App() {
     return (
-        <News/>
-        // <WritersCarousel/>
+        <div>
+            <Routes>
+                <Route path={'/login'} element={<SignIn/>}/>
+                <Route path={'/Dashboard'} element={<Dashboard/>}/>
+            </Routes>
+        </div>
     );
 }
 

@@ -1,5 +1,5 @@
 import {Carousel} from "react-bootstrap";
-import writerImg from '../img/writer.jpeg'
+import writerImg from '../../img/writer.jpeg'
 
 function WritersCarousel() {
 
@@ -22,10 +22,8 @@ function WritersCarousel() {
                             <h3>Cho’lpon</h3>
                             <p className='px-lg-5 ms-lg-5 text-start'>
                                 Choʻlpon Abdulhamid Sulaymon oʻgʻli, asl ismi Abdulhamid Sulaymon oʻgʻli Yunusov —
-                                oʻzbek
-                                sovet shoiri, yozuvchi, dramaturg va publitsist, yangi oʻzbek sheʼriyati asoschilaridan
-                                biri.
-                                U o‘z asarlarini tahallus Cho‘lpon bilan imzolagan
+                                oʻzbek sovet shoiri, yozuvchi, dramaturg va publitsist, yangi oʻzbek sheʼriyati
+                                asoschilaridan biri. U o‘z asarlarini tahallus Cho‘lpon bilan imzolagan
                             </p>
                         </Carousel.Caption>
                     </Carousel.Item>
