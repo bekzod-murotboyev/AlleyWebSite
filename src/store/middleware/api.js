@@ -14,7 +14,6 @@ const api = ({dispatch}) => (next) => (action) => {
     if (token)
         headers = {'Authorization': token}
 
-
     axios({
         baseURL: 'http://50.116.20.197:9095/',
         url,

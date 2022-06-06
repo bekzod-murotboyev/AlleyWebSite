@@ -1,6 +1,7 @@
 import FormUser from "./FormUser";
 import FormNews from "./FormNews";
 import FormBook from "./FormBook";
+import FormUniversity from "./FormUniversity";
 
 function FormControl({type}) {
 
@@ -12,7 +13,7 @@ function FormControl({type}) {
             <div className="card-body">
                 {
                     type === 'user' ? <FormUser/> :
-                        type === 'news' ? <FormNews/> : <FormBook/>
+                        type === 'news' ? <FormNews/> : type === 'university' ? <FormUniversity/> : <FormBook/>
                 }
             </div>
         </div>

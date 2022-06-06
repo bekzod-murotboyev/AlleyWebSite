@@ -7,6 +7,8 @@ import PeopleIcon from '@mui/icons-material/People';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import LayersIcon from '@mui/icons-material/Layers';
 import {useNavigate} from "react-router";
+import {StepIcon} from "@mui/material";
+import {ImportContacts, InsertEmoticon} from "@mui/icons-material";
 
 function MainListItems({setType, clear}) {
 
@@ -29,6 +31,12 @@ function MainListItems({setType, clear}) {
                 </ListItemIcon>
                 <ListItemText primary="Dashboard" onClick={() => toggle('dashboard')}/>
             </ListItemButton>
+            <ListItemButton onClick={() => toggle('university')}>
+                <ListItemIcon>
+                    <ImportContacts/>
+                </ListItemIcon>
+                <ListItemText primary="Add University"/>
+            </ListItemButton>
             <ListItemButton onClick={() => toggle('user')}>
                 <ListItemIcon>
                     <PeopleIcon/>
@@ -41,11 +49,11 @@ function MainListItems({setType, clear}) {
                 </ListItemIcon>
                 <ListItemText primary="Add news"/>
             </ListItemButton>
-            <ListItemButton onClick={() => toggle('book')}>
+            <ListItemButton onClick={() => toggle('writer')}>
                 <ListItemIcon>
                     <BarChartIcon/>
                 </ListItemIcon>
-                <ListItemText primary="Add book"/>
+                <ListItemText primary="Add writer"/>
             </ListItemButton>
             <ListItemButton onClick={logout}>
                 <ListItemIcon>
