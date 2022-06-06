@@ -29,7 +29,7 @@ const api = ({dispatch}) => (next) => (action) => {
     }).catch(err => {
         dispatch({
             type: onFail,
-            payload: err.response.data
+            payload: err.response
         })
     })
 }

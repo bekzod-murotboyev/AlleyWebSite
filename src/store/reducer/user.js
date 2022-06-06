@@ -1,4 +1,4 @@
-import {createSlice} from "@reduxjs/toolkit";
+import {createSlice,createAction} from "@reduxjs/toolkit";
 import {apiCall} from "../api";
 import {toast} from 'react-toastify';
 import qs from 'qs'
@@ -12,19 +12,29 @@ const slice = createSlice({
             state.token = payload.token_type
             localStorage.setItem("access", payload.token_type + ' ' + payload.access_token)
         },
-        onLoginFail: (state, {payload}) => {
+        onLoginFail: (state, {payload: {data, status}}) => {
             localStorage.setItem('access', '')
-            toast.error(payload.detail.error, {autoClose: 1500})
+            toast.error(data.detail.error, {autoClose: 1500})
         },
         onCreateSuccess: (state, {payload}) => {
             toast.success("Success", {autoClose: 1500})
         },
-        onFail: (state, {payload}) => {
-            toast.error(payload.detail.error, {autoClose: 1500})
+        onFail: (state, {payload: {data, status}}) => {
+            if (status === 401) {
+                localStorage.setItem('access', '')
+                state.token = ''
+            }
+            status === 403 ? toast.error('You don\'t have this permission', {autoClose: 1500})
+                : toast.error(data.detail, {autoClose: 1500})
+            toast.error(data.detail.error, {autoClose: 1500})
+        },
+        clearToken: (state, {payload}) => {
+            state.token=''
         }
     }
 })
 
+export const clear=createAction('clearToken')
 
 export const login = (data) => apiCall({
     url: 'users/login',
