@@ -15,8 +15,11 @@ const slice = createSlice({
         changeFilePath: (state, {payload}) => {
             state.file_path = ' '
         },
+        onGetSuccess:(state, {payload})=>{
+            state.books=payload
+        },
         onFail: (state, {payload}) => {
-            toast.error(payload.detail.error, {autoClose: 1500})
+            toast.error(payload.detail, {autoClose: 1500})
         }
     }
 })
@@ -37,6 +40,12 @@ export const upload = (data) => apiCall({
     onSuccess: slice.actions.onUploadSuccess.type,
     onFail: slice.actions.onFail.type,
     data
+});
+export const getAll = () => apiCall({
+    url: 'books',
+    method: 'GET',
+    onSuccess: slice.actions.onGetSuccess.type,
+    onFail: slice.actions.onFail.type,
 });
 
 

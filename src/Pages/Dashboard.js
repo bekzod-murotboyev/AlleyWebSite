@@ -10,18 +10,16 @@ import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MainListItems from "../components/admin/ListItem";
-import Chart from "../components/admin/Chart";
-import Deposits from "../components/admin/Deposit";
-import Orders from "../components/admin/Orders";
-
-
+import DashboardPage from "../components/admin/DashboardPage";
+import FormUser from "../components/form/FormUser";
+import FormBook from "../components/form/FormBook";
+import FormNews from "../components/form/FormNews";
+import {FormLabel} from "@mui/material";
+import FormControl from "../components/form/FormControl";
 
 
 const drawerWidth = 240;
@@ -73,10 +71,12 @@ const Drawer = styled(MuiDrawer, {shouldForwardProp: (prop) => prop !== 'open'})
 const mdTheme = createTheme();
 
 function DashboardContent() {
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
+    const [type, setType] = useState('dashboard');
     const toggleDrawer = () => {
         setOpen(!open);
     };
+
 
     return (
         <ThemeProvider theme={mdTheme}>
@@ -131,7 +131,7 @@ function DashboardContent() {
                     </Toolbar>
                     <Divider/>
                     <List component="nav">
-                        <MainListItems/>
+                        <MainListItems setType={setType}/>
                         <Divider sx={{my: 1}}/>
                     </List>
                 </Drawer>
@@ -148,41 +148,7 @@ function DashboardContent() {
                     }}
                 >
                     <Toolbar/>
-                    <Container maxWidth="lg" sx={{mt: 4, mb: 4}}>
-                        <Grid container spacing={3}>
-                            {/* Chart */}
-                            <Grid item xs={12} md={8} lg={9}>
-                                <Paper
-                                    sx={{
-                                        p: 2,
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        height: 240,
-                                    }}
-                                >
-                                    <Chart/>
-                                </Paper>
-                            </Grid>
-                            <Grid item xs={12} md={4} lg={3}>
-                                <Paper
-                                    sx={{
-                                        p: 2,
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        height: 240,
-                                    }}
-                                >
-                                    <Deposits/>
-                                </Paper>
-                            </Grid>
-                            {/* Recent Orders */}
-                            <Grid item xs={12}>
-                                <Paper sx={{p: 2, display: 'flex', flexDirection: 'column'}}>
-                                    <Orders/>
-                                </Paper>
-                            </Grid>
-                        </Grid>
-                    </Container>
+                    {type === 'dashboard' ? <DashboardPage/> :<FormControl type={type}/>}
                 </Box>
             </Box>
         </ThemeProvider>

@@ -6,7 +6,7 @@ import {create, upload, changeFilePath} from "../../store/reducer/book";
 import {toast} from "react-toastify";
 import {useState, useEffect} from "react";
 
-function FormBook({create, setOpen, file_path, upload, changeFilePath}) {
+function FormBook({create, file_path, upload, changeFilePath}) {
 
     const [oldData, setOldData] = useState({})
 
@@ -19,7 +19,6 @@ function FormBook({create, setOpen, file_path, upload, changeFilePath}) {
                 short_info: oldData.get('description'),
                 page_count: oldData.get('page_count')
             })
-            setOpen(false)
             changeFilePath()
         }
     }, [file_path])
@@ -71,7 +70,7 @@ function FormBook({create, setOpen, file_path, upload, changeFilePath}) {
                 name={'description'}
                 aria-label="Description"
                 placeholder="You can write here about Book"
-                style={{width: 333, height: 100}}
+                style={{width: '100%', height: 100}}
             />
             <TextField
                 margin="normal"

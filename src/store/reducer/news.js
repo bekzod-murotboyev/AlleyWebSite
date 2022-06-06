@@ -10,7 +10,7 @@ const slice = createSlice({
             toast.success("Success", {autoClose: 1500})
         },
         onFail: (state, {payload}) => {
-            toast.error(payload.detail.error, {autoClose: 1500})
+            toast.error(payload.detail, {autoClose: 1500})
         }
     }
 })

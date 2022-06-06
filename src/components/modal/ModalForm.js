@@ -32,8 +32,7 @@ function ModalForm({open, setOpen, type}) {
                     <h5>Add {type}</h5>
                 </Typography>
                 <Typography id="modal-modal-description" sx={{mt: 2}}>
-                    {type === 'user' ? <FormUser setOpen={setOpen}/> :
-                        type === 'news' ? <FormNews setOpen={setOpen}/> : <FormBook setOpen={setOpen}/>}
+
                 </Typography>
             </Box>
         </Modal>

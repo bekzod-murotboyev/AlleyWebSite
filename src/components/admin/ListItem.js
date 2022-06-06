@@ -9,10 +9,9 @@ import LayersIcon from '@mui/icons-material/Layers';
 import {useState} from "react";
 import ModalForm from "../modal/ModalForm";
 
-function MainListItems() {
+function MainListItems({setType}) {
 
     const [open, setOpen] = useState(false)
-    const [type, setType] = useState(false)
 
     function toggle(type) {
         setType(type)
@@ -25,7 +24,7 @@ function MainListItems() {
                 <ListItemIcon>
                     <DashboardIcon/>
                 </ListItemIcon>
-                <ListItemText primary="Dashboard"/>
+                <ListItemText primary="Dashboard" onClick={() => toggle('dashboard')}/>
             </ListItemButton>
             <ListItemButton onClick={() => toggle('user')}>
                 <ListItemIcon>
@@ -45,7 +44,7 @@ function MainListItems() {
                 </ListItemIcon>
                 <ListItemText primary="Add book"/>
             </ListItemButton>
-            <ModalForm open={open} setOpen={setOpen} type={type}/>
+            {/*<ModalForm open={open} setOpen={setOpen} type={type}/>*/}
         </React.Fragment>
     )
 }

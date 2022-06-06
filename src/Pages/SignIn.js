@@ -14,10 +14,15 @@ import Container from '@mui/material/Container';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
 import {Button} from "@mui/material";
 import {useEffect} from "react";
+import Dashboard from "./Dashboard";
+import {useNavigate} from "react-router";
 
 const theme = createTheme();
 
-function SignInPage({login, token, history}) {
+function SignInPage({login, token}) {
+
+    const navigate = useNavigate();
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
@@ -28,10 +33,14 @@ function SignInPage({login, token, history}) {
     };
 
     useEffect(() => {
-        console.log(token)
         if (token !== '')
-            history.push('/Dashboard')
+            navigate('/dashboard')
     }, [token])
+
+    useEffect(() => {
+        if (token !== '')
+            navigate('/dashboard')
+    }, [])
 
 
     return (

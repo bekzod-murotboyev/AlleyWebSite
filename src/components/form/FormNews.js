@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 import {create} from "../../store/reducer/news";
 import {toast} from "react-toastify";
 
-function FormNews({create, setOpen}) {
+function FormNews({create}) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -14,7 +14,6 @@ function FormNews({create, setOpen}) {
         const body = data.get('body')
         if (title && body) {
             create({title, body})
-            setOpen(false)
         } else toast.error("You need to fill all blanks", {autoClose: 1000})
     };
 
@@ -34,7 +33,7 @@ function FormNews({create, setOpen}) {
                 name={'body'}
                 aria-label="Body"
                 placeholder="You can write here about news"
-                style={{width: 333, height: 100}}
+                style={{width: '100%', height: 100}}
             />
             <Button
                 type="submit"

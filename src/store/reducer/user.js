@@ -8,7 +8,7 @@ const slice = createSlice({
     initialState: {user: {}, token: ''},
     reducers: {
         onLoginSuccess: (state, {payload}) => {
-            toast.success("Success", {autoClose: 500})
+            toast.success("Welcome!", {autoClose: 500})
             state.token = payload.token_type
             localStorage.setItem("access", payload.token_type + ' ' + payload.access_token)
         },
