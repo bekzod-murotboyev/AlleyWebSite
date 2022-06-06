@@ -15,7 +15,7 @@ function Main() {
             <Video />
             <News/>
             <Writers/>
-            <Books/>
+            <Books limit={4}/>
             <Picture/>
             <Footer/>
         </div>

@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import Cards from "./card";
 import {NavLink} from "react-router-dom";
 
-function Books() {
+function Books({limit}) {
   return (
     <Box
       sx={{
@@ -30,7 +30,7 @@ function Books() {
                 Kitoblar
             </Typography>
         </NavLink>
-      <Cards />
+      <Cards limit={limit}/>
     </Box>
   );
 }
