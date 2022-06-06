@@ -4,7 +4,7 @@ import Title from "./title";
 
 function News() {
   return (
-    <Box sx={{ py: 5, px: 13 }}>
+    <Box sx={{ py: 5, px: 13 }} id={"news"}>
       <Title />
       <Box>
         <Typography

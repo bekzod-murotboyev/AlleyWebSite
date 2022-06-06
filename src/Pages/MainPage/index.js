@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import back from "../../images/back.jpg";
 function MainPage() {
   return (
-    <div>
+    <div id={"rasm"}>
       <Box
         sx={{
           backgroundImage: `url(${back})`,

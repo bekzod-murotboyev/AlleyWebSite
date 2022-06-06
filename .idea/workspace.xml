@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="6cf59d29-052a-4f11-ae53-5a225ce5e6a1" name="Changes" comment="sd">
-      <change afterPath="$PROJECT_DIR$/src/components/admin/DashboardPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/form/FormControl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pages/VideoPage/video.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/SignIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/SignIn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/Books/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Books/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/MainPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/MainPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/News/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/News/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/PicturePage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/PicturePage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/ListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/ListItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/form/FormBook.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form/FormBook.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/form/FormNews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form/FormNews.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/form/FormUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/form/FormUser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modal/ModalForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modal/ModalForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducer/book.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducer/book.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducer/news.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducer/news.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducer/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducer/user.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,24 +55,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/bekzod5939/WebstormProjects/newswebsite/src/Pages&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  }
-}</component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Pages" />

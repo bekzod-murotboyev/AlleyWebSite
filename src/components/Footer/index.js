@@ -6,6 +6,7 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import CallIcon from "@mui/icons-material/Call";
 import EmailIcon from "@mui/icons-material/Email";
+import {Nav} from "react-bootstrap";
 function Footer() {
   return (
     <Box
@@ -53,19 +54,23 @@ function Footer() {
           <Typography>(78) 207 92 93</Typography>
         </Box>
       </Box>
-      <Box
-        sx={{
-          color: "white",
-          display: "flex",
-          flexDirection: "column",
-          gap: 2,
-        }}
-      >
-        <Typography>Asosiy</Typography>
-        <Typography>Yangiliklar</Typography>
-        <Typography>Kitoblar</Typography>
-        <Typography>Rasmlar</Typography>
-      </Box>
+
+          <Nav  style={{ fontSize: "20px",display:"flex",flexDirection:"column" }}>
+              <Nav.Link href="#main"  className="py-1 px-3">
+                  Asosiy
+              </Nav.Link>
+
+              <Nav.Link href="#news" className="py-1 px-3">
+                  Yangiliklar
+              </Nav.Link>
+              <Nav.Link href="#books" className="py-1 px-3">
+                  Kitoblar
+              </Nav.Link>
+              <Nav.Link href="#rasm" className="py-1 px-3">
+                  Rasmlar
+              </Nav.Link>
+          </Nav>
+
     </Box>
   );
 }

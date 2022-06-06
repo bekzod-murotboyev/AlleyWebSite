@@ -1,6 +1,9 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
+import {NavLink} from "react-router-dom";
 
 function Header() {
+
+
   return (
     <div>
       <Navbar bg="light" expand="lg" fixed="top">
@@ -20,16 +23,17 @@ function Header() {
               navbarScroll
             ></Nav>
             <Nav className="d-flex" style={{ fontSize: "20px" }}>
-              <Nav.Link href="#action1" className="py-1 px-3">
-                Asosiy
-              </Nav.Link>
-              <Nav.Link href="#action2" className="py-1 px-3">
+             <Nav.Link href="#main"  className="py-1 px-3">
+              Asosiy
+            </Nav.Link>
+
+              <Nav.Link href="#news" className="py-1 px-3">
                 Yangiliklar
               </Nav.Link>
-              <Nav.Link href="#action3" className="py-1 px-3">
+              <Nav.Link href="#books" className="py-1 px-3">
                 Kitoblar
               </Nav.Link>
-              <Nav.Link href="#action4" className="py-1 px-3">
+              <Nav.Link href="#rasm" className="py-1 px-3">
                 Rasmlar
               </Nav.Link>
             </Nav>

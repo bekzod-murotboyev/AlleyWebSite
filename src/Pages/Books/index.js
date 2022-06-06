@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import Cards from "./card";
+import {NavLink} from "react-router-dom";
 
 function Books() {
   return (
@@ -8,18 +9,27 @@ function Books() {
         py: 4,
         px: 13,
         mt: 8,
+
       }}
+      id={"books"}
     >
-      <Typography
-        sx={{
-          fontSize: "35px",
-          fontWeight: "700",
-          lineHeight: "42px",
-          mb: 3,
-        }}
-      >
-        Kitoblar
-      </Typography>
+        <NavLink to={"/books"}>
+            <Typography
+                sx={{
+                    fontSize: "35px",
+                    fontWeight: "700",
+                    lineHeight: "42px",
+                    mb: 3,
+
+                    color:"black",
+                    ".MuiTypography - root":{
+                        textDecoration:"none"
+                    }
+                }}
+            >
+                Kitoblar
+            </Typography>
+        </NavLink>
       <Cards />
     </Box>
   );
