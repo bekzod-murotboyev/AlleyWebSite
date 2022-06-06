@@ -18,6 +18,8 @@ import DashboardPage from "../components/admin/DashboardPage";
 import FormControl from "../components/form/FormControl";
 import {useNavigate} from "react-router";
 import {connect} from "react-redux";
+import {clear} from "../store/reducer/user";
+import {toast} from "react-toastify";
 
 
 const drawerWidth = 240;
@@ -68,7 +70,7 @@ const Drawer = styled(MuiDrawer, {shouldForwardProp: (prop) => prop !== 'open'})
 
 const mdTheme = createTheme();
 
-function DashboardContent({token}) {
+function DashboardContent({token, clear, dropBook, dropNews}) {
     const [open, setOpen] = useState(false);
     const [type, setType] = useState('dashboard');
     const toggleDrawer = () => {
@@ -78,14 +80,16 @@ function DashboardContent({token}) {
     const navigate = useNavigate()
 
     useEffect(() => {
-        if (!localStorage.getItem('access'))
-            navigate('/')
-    }, [])
+        if  (dropBook || dropNews) {
+            navigate('/login')
+            toast.error("Please let me check your credentials")
+        }
+    }, [token, dropNews, dropBook])
 
     useEffect(() => {
-        if (!localStorage.getItem('access'))
+        if (!localStorage.getItem('access') || dropBook || dropNews)
             navigate('/')
-    }, [token])
+    }, [])
 
 
     return (
@@ -141,7 +145,7 @@ function DashboardContent({token}) {
                     </Toolbar>
                     <Divider/>
                     <List component="nav">
-                        <MainListItems setType={setType}/>
+                        <MainListItems setType={setType} clear={clear}/>
                         <Divider sx={{my: 1}}/>
                     </List>
                 </Drawer>
@@ -166,4 +170,8 @@ function DashboardContent({token}) {
 }
 
 
-export default connect(({user:{token}})=>({token}),{})(DashboardContent)
+export default connect(({user: {token}, news: {dropNews}, book: {dropBook}}) => ({
+    token,
+    dropBook,
+    dropNews
+}), {clear})(DashboardContent)

@@ -6,16 +6,19 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import PeopleIcon from '@mui/icons-material/People';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import LayersIcon from '@mui/icons-material/Layers';
-import {useState} from "react";
-import ModalForm from "../modal/ModalForm";
+import {useNavigate} from "react-router";
 
-function MainListItems({setType}) {
+function MainListItems({setType, clear}) {
 
-    const [open, setOpen] = useState(false)
+    const navigate = useNavigate()
 
     function toggle(type) {
         setType(type)
-        setOpen(true)
+    }
+
+    function logout() {
+        clear()
+        navigate('/')
     }
 
     return (
@@ -44,7 +47,14 @@ function MainListItems({setType}) {
                 </ListItemIcon>
                 <ListItemText primary="Add book"/>
             </ListItemButton>
-            {/*<ModalForm open={open} setOpen={setOpen} type={type}/>*/}
+            <ListItemButton onClick={logout}>
+                <ListItemIcon>
+                    <div className='btn btn-sm btn-danger'>
+                        <PeopleIcon/>
+                    </div>
+                </ListItemIcon>
+                <ListItemText primary="Logout"/>
+            </ListItemButton>
         </React.Fragment>
     )
 }

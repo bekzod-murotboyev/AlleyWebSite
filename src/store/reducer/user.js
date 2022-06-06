@@ -29,12 +29,13 @@ const slice = createSlice({
             toast.error(data.detail.error, {autoClose: 1500})
         },
         clearToken: (state, {payload}) => {
+            localStorage.setItem('access','')
             state.token=''
         }
     }
 })
 
-export const clear=createAction('clearToken')
+export const clear=createAction(slice.actions.clearToken.type)
 
 export const login = (data) => apiCall({
     url: 'users/login',

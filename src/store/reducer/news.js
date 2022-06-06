@@ -5,18 +5,18 @@ import {clear} from "./user";
 
 const slice = createSlice({
     name: 'news',
-    initialState: {news: {}},
+    initialState: {news: {},dropNews:false},
     reducers: {
         onCreateSuccess: (state, {payload}) => {
             toast.success("Success", {autoClose: 1500})
         },
         onFail: (state, {payload: {data, status}}) => {
             if (status === 401){
+                state.dropNews=true
                 localStorage.setItem('access', '')
-                clear()
             }
             status === 403 ? toast.error('You don\'t have this permission', {autoClose: 1500})
-                : toast.error(data.detail, {autoClose: 1500})
+                : toast.error(data.detail?data.detail:data.detail.error, {autoClose: 1500})
         }
     }
 })

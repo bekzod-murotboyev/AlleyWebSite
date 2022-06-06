@@ -33,7 +33,7 @@ function Header() {
               <Nav.Link href="#books" className="py-1 px-3">
                 Kitoblar
               </Nav.Link>
-              <Nav.Link href="#rasm" className="py-1 px-3">
+              <Nav.Link href="#picture" className="py-1 px-3">
                 Rasmlar
               </Nav.Link>
             </Nav>

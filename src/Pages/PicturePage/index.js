@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import BasicGrid from "./pic";
 function Picture() {
   return (
-    <Box sx={{ py: 5, px: 13 }} id={"rasm"}>
+    <Box sx={{ py: 5, px: 13 }} id={"picture"}>
       <Box>
         <Typography
           sx={{
