@@ -1,6 +1,7 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {apiCall} from "../api";
 import {toast} from 'react-toastify';
+import {clear} from "./user";
 
 const slice = createSlice({
     name: 'book',
@@ -15,11 +16,16 @@ const slice = createSlice({
         changeFilePath: (state, {payload}) => {
             state.file_path = ' '
         },
-        onGetSuccess:(state, {payload})=>{
-            state.books=payload
+        onGetSuccess: (state, {payload}) => {
+            state.books = payload
         },
-        onFail: (state, {payload}) => {
-            toast.error(payload.detail, {autoClose: 1500})
+        onFail: (state, {payload: {data, status}}) => {
+            if (status === 401){
+                localStorage.setItem('access', '')
+                clear()
+            }
+            status === 403 ? toast.error('You don\'t have this permission', {autoClose: 1500})
+                : toast.error(data.detail, {autoClose: 1500})
         }
     }
 })

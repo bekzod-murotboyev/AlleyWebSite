@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {styled, createTheme, ThemeProvider} from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
@@ -15,11 +15,9 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MainListItems from "../components/admin/ListItem";
 import DashboardPage from "../components/admin/DashboardPage";
-import FormUser from "../components/form/FormUser";
-import FormBook from "../components/form/FormBook";
-import FormNews from "../components/form/FormNews";
-import {FormLabel} from "@mui/material";
 import FormControl from "../components/form/FormControl";
+import {useNavigate} from "react-router";
+import {connect} from "react-redux";
 
 
 const drawerWidth = 240;
@@ -70,12 +68,24 @@ const Drawer = styled(MuiDrawer, {shouldForwardProp: (prop) => prop !== 'open'})
 
 const mdTheme = createTheme();
 
-function DashboardContent() {
+function DashboardContent({token}) {
     const [open, setOpen] = useState(false);
     const [type, setType] = useState('dashboard');
     const toggleDrawer = () => {
         setOpen(!open);
     };
+
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        if (!localStorage.getItem('access'))
+            navigate('/')
+    }, [])
+
+    useEffect(() => {
+        if (!localStorage.getItem('access'))
+            navigate('/')
+    }, [token])
 
 
     return (
@@ -148,13 +158,12 @@ function DashboardContent() {
                     }}
                 >
                     <Toolbar/>
-                    {type === 'dashboard' ? <DashboardPage/> :<FormControl type={type}/>}
+                    {type === 'dashboard' ? <DashboardPage/> : <FormControl type={type}/>}
                 </Box>
             </Box>
         </ThemeProvider>
     );
 }
 
-export default function Dashboard() {
-    return <DashboardContent/>;
-}
+
+export default connect(({user:{token}})=>({token}),{})(DashboardContent)
