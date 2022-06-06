@@ -12,8 +12,8 @@ function FormControl({type}) {
             </div>
             <div className="card-body">
                 {
-                    type === 'user' ? <FormUser/> :
-                        type === 'news' ? <FormNews/> : type === 'university' ? <FormUniversity/> : <FormBook/>
+                    type === 'User' ? <FormUser/> :
+                        type === 'News' ? <FormNews/> : type === 'University' ? <FormUniversity/> : <FormBook/>
                 }
             </div>
         </div>

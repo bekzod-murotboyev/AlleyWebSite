@@ -31,29 +31,29 @@ function MainListItems({setType, clear}) {
                 </ListItemIcon>
                 <ListItemText primary="Dashboard" onClick={() => toggle('dashboard')}/>
             </ListItemButton>
-            <ListItemButton onClick={() => toggle('university')}>
+            <ListItemButton onClick={() => toggle('University')}>
                 <ListItemIcon>
                     <ImportContacts/>
                 </ListItemIcon>
                 <ListItemText primary="Add University"/>
             </ListItemButton>
-            <ListItemButton onClick={() => toggle('user')}>
+            <ListItemButton onClick={() => toggle('User')}>
                 <ListItemIcon>
                     <PeopleIcon/>
                 </ListItemIcon>
-                <ListItemText primary="Add user"/>
+                <ListItemText primary="Add User"/>
             </ListItemButton>
-            <ListItemButton onClick={() => toggle('news')}>
+            <ListItemButton onClick={() => toggle('News')}>
                 <ListItemIcon>
                     <LayersIcon/>
                 </ListItemIcon>
-                <ListItemText primary="Add news"/>
+                <ListItemText primary="Add News"/>
             </ListItemButton>
-            <ListItemButton onClick={() => toggle('writer')}>
+            <ListItemButton onClick={() => toggle('Writer')}>
                 <ListItemIcon>
                     <BarChartIcon/>
                 </ListItemIcon>
-                <ListItemText primary="Add writer"/>
+                <ListItemText primary="Add Writer"/>
             </ListItemButton>
             <ListItemButton onClick={logout}>
                 <ListItemIcon>
