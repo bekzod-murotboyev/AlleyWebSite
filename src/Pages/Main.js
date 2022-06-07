@@ -6,6 +6,7 @@ import Books from "./Books";
 import Picture from "./PicturePage";
 import Footer from "../components/Footer";
 import Video from "../Pages/VideoPage/video"
+import MapPage from "./MapPage";
 function Main() {
 
     return (
@@ -15,8 +16,9 @@ function Main() {
             <Video />
             <News/>
             <Writers/>
-            <Books limit={4}/>
+            <Books />
             <Picture/>
+            <MapPage />
             <Footer/>
         </div>
     )

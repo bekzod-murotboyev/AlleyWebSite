@@ -1,6 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import Cards from "./card";
-import {NavLink} from "react-router-dom";
+import BooksSlick from "./card";
 
 function Books({limit}) {
   return (
@@ -13,24 +12,22 @@ function Books({limit}) {
       }}
       id={"books"}
     >
-        <NavLink to={"/books"}>
+
             <Typography
                 sx={{
                     fontSize: "35px",
-                    fontWeight: "700",
+                    fontWeight: "400",
+                    letterSpacing:"1px",
                     lineHeight: "42px",
                     mb: 3,
-
+                    fontFamily:"Montserrat",
                     color:"black",
-                    ".MuiTypography - root":{
-                        textDecoration:"none"
-                    }
                 }}
             >
                 Kitoblar
             </Typography>
-        </NavLink>
-      <Cards limit={limit}/>
+
+      <BooksSlick/>
     </Box>
   );
 }

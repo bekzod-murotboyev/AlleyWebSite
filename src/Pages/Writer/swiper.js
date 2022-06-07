@@ -1,78 +1,89 @@
-import { Box, Typography } from "@mui/material";
-import React, { Component } from "react";
-import Slider from "react-slick";
 
-export default function Swiper() {
-  const settings = {
-    centerMode: true,
-    infinite: true,
+import React from "react";
+import {
+    Box,
+    Card,
+    CardActionArea,
+    CardContent,
+    CardMedia,
+    Grid,
+    styled,
+    Typography,
+} from "@mui/material";
+const Item = styled(Box)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: "center",
+    color: theme.palette.text.secondary,
+}));
+export default function WriterCard() {
+    const dataWriters = [
+        {
+            imgUrl:"https://adiblarxiyoboni.netlify.app/assets/images/adib1.png",
+            name: "Cho'lpon",
+            description: "Choʻlpon Abdulhamid Sulaymon oʻgʻli, asl ismi Abdulhamid Sulaymon oʻgʻli Yunusov — oʻzbek sovet shoiri, yozuvchi, dramaturg va publitsist, yangi oʻzbek sheʼriyati asoschilaridan biri. U o‘z asarlarini tahallus Cho‘lpon bilan imzolagan",
 
-    slidesToShow: 1,
-    speed: 1000,
-    autoplay: true,
-    autoplaySpeed: 2000,
-  };
+        },
+        {
+            imgUrl:"https://adiblarxiyoboni.netlify.app/assets/images/adib1.png",
+            name: "Cho'lpon",
+            description: "Choʻlpon Abdulhamid Sulaymon oʻgʻli, asl ismi Abdulhamid Sulaymon oʻgʻli Yunusov — oʻzbek sovet shoiri, yozuvchi, dramaturg va publitsist, yangi oʻzbek sheʼriyati asoschilaridan biri. U o‘z asarlarini tahallus Cho‘lpon bilan imzolagan",
+
+        },
+        {
+            imgUrl:"https://adiblarxiyoboni.netlify.app/assets/images/adib1.png",
+            name: "Cho'lpon",
+            description: "Choʻlpon Abdulhamid Sulaymon oʻgʻli, asl ismi Abdulhamid Sulaymon oʻgʻli Yunusov — oʻzbek sovet shoiri, yozuvchi, dramaturg va publitsist, yangi oʻzbek sheʼriyati asoschilaridan biri. U o‘z asarlarini tahallus Cho‘lpon bilan imzolagan",
+
+        },
+        {
+            imgUrl:"https://adiblarxiyoboni.netlify.app/assets/images/adib1.png",
+            name: "Cho'lpon",
+            description: "Choʻlpon Abdulhamid Sulaymon oʻgʻli, asl ismi Abdulhamid Sulaymon oʻgʻli Yunusov — oʻzbek sovet shoiri, yozuvchi, dramaturg va publitsist, yangi oʻzbek sheʼriyati asoschilaridan biri. U o‘z asarlarini tahallus Cho‘lpon bilan imzolagan",
+
+        },
+
+
+
+
+    ]
+
   return (
-    <Box sx={{ overflow: "hidden", py: 8 }}>
-      <Slider {...settings}>
-        <Box>
-          <Box sx={{ width: "380px" }}>
-            <img
-              src="https://adiblarxiyoboni.netlify.app/assets/images/adib1.png"
-              alt=""
-            />
-          </Box>
-          <Box>
-            <Typography sx={{ fontSize: "35px", fontWeight: "700" }}>
-              Cho’lpon
-            </Typography>
-            <Typography>
-              Choʻlpon Abdulhamid Sulaymon oʻgʻli, asl ismi Abdulhamid Sulaymon
-              oʻgʻli Yunusov — oʻzbek sovet shoiri, yozuvchi, dramaturg va
-              publitsist, yangi oʻzbek sheʼriyati asoschilaridan biri. U o‘z
-              asarlarini tahallus Cho‘lpon bilan imzolagan
-            </Typography>
-          </Box>
-        </Box>
-        <Box>
-          <Box sx={{ width: "380px" }}>
-            <img
-              src="https://adiblarxiyoboni.netlify.app/assets/images/adib1.png"
-              alt=""
-            />
-          </Box>
-          <Box>
-            <Typography sx={{ fontSize: "35px", fontWeight: "700" }}>
-              Cho’lpon
-            </Typography>
-            <Typography>
-              Choʻlpon Abdulhamid Sulaymon oʻgʻli, asl ismi Abdulhamid Sulaymon
-              oʻgʻli Yunusov — oʻzbek sovet shoiri, yozuvchi, dramaturg va
-              publitsist, yangi oʻzbek sheʼriyati asoschilaridan biri. U o‘z
-              asarlarini tahallus Cho‘lpon bilan imzolagan
-            </Typography>
-          </Box>
-        </Box>
-        <Box>
-          <Box sx={{ width: "380px" }}>
-            <img
-              src="https://adiblarxiyoboni.netlify.app/assets/images/adib1.png"
-              alt=""
-            />
-          </Box>
-          <Box>
-            <Typography sx={{ fontSize: "35px", fontWeight: "700" }}>
-              Cho’lpon
-            </Typography>
-            <Typography>
-              Choʻlpon Abdulhamid Sulaymon oʻgʻli, asl ismi Abdulhamid Sulaymon
-              oʻgʻli Yunusov — oʻzbek sovet shoiri, yozuvchi, dramaturg va
-              publitsist, yangi oʻzbek sheʼriyati asoschilaridan biri. U o‘z
-              asarlarini tahallus Cho‘lpon bilan imzolagan
-            </Typography>
-          </Box>
-        </Box>
-      </Slider>
-    </Box>
+      <Box sx={{ flexGrow: 1 }}>
+          <Grid container spacing={2}>
+              {dataWriters.map((i, index) => {
+                  return (
+
+                          <Grid item xs={12} sm={6} md={3} key={index}>
+                              <Item>
+                                  <Card sx={{ maxWidth: 345 }}>
+                                      <CardActionArea>
+                                          <CardMedia
+                                              component="img"
+                                              height="140"
+                                              image={i.imgUrl}
+                                              alt="green iguana"
+
+
+                                          />
+                                          <CardContent>
+                                              <Typography gutterBottom variant="h6" component="div">
+                                                  {i.name}
+                                              </Typography>
+                                              <Typography variant="body2" color="text.secondary">
+                                                  {i.description}
+                                              </Typography>
+                                          </CardContent>
+                                      </CardActionArea>
+                                  </Card>
+                              </Item>
+                          </Grid>
+
+                  );
+              })}
+          </Grid>
+      </Box>
+
   );
 }

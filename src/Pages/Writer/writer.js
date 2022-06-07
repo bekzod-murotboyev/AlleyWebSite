@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
-import Swiper from "./swiper";
+import WriterCard from "./swiper";
+import {NavLink} from "react-router-dom";
 
 function Writers() {
   return (
@@ -11,17 +12,23 @@ function Writers() {
         borderBottom: "1px solid grey",
       }}
     >
-      <Typography
-        sx={{
-          fontSize: "35px",
-          fontWeight: "700",
-          lineHeight: "42px",
-          mb: 5,
-        }}
-      >
-        Yozuvchilar
-      </Typography>
-      <Swiper />
+    <NavLink to={'/writers'}>
+        <Typography
+            sx={{
+                fontSize: "35px",
+                lineHeight: "42px",
+                mb: 5,
+                color:"black",
+                fontFamily:"Montserrat",
+                fontWeight:"400",
+                textDecoration:"none"
+            }}
+        >
+            Yozuvchilar
+        </Typography>
+    </NavLink>
+
+      <WriterCard />
     </Box>
   );
 }

@@ -7,8 +7,9 @@ function Picture() {
         <Typography
           sx={{
             fontSize: "35px",
-            fontWeight: "700",
+            fontWeight: "400",
             lineHeight: "42px",
+              fontFamily:"Montserrat",
             my: 4,
             mt: 8,
           }}
