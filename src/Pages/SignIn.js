@@ -16,6 +16,7 @@ import {Button} from "@mui/material";
 import {useEffect} from "react";
 import Dashboard from "./Dashboard";
 import {useNavigate} from "react-router";
+import {toast} from "react-toastify";
 
 const theme = createTheme();
 
@@ -26,10 +27,14 @@ function SignInPage({login, token}) {
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        login({
-            username: data.get('username'),
-            password: data.get('password'),
-        })
+        const username = data.get('username')
+        const password = data.get('password')
+        if (username && password)
+            login({
+                username,
+                password
+            })
+        else toast.error("You need to fill all blanks", {autoClose: 1000})
     };
 
     useEffect(() => {
