@@ -2,31 +2,30 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import {Button, TextareaAutosize} from "@mui/material";
 import {connect} from "react-redux";
-import {create, upload, changeFilePath} from "../../store/reducer/book";
+import {create, upload} from "../../store/reducer/book";
 import {toast} from "react-toastify";
 import {useState, useEffect} from "react";
 
-function FormBook({create, file_path, upload, changeFilePath}) {
+function FormBook({create, file_path, upload}) {
 
     const [oldData, setOldData] = useState({})
 
     useEffect(() => {
-        if (file_path !== '') {
+        if (file_path !== '' && file_path) {
             create({
                 name: oldData.get('name'),
-                author: oldData.get('author'),
+                author: 'author',
                 file_path: file_path,
                 short_info: oldData.get('description'),
-                page_count: oldData.get('page_count')
+                page_count: 100
             })
-            changeFilePath()
         }
     }, [file_path])
 
     function handleSubmit(event) {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        if (data.get('name') && data.get('author') && data.get('description') && data.get('page_count') && data.get('file')) {
+        if (data.get('name') && data.get('description') && data.get('file')) {
             upload(data)
             setOldData(data)
         } else toast.error("You need to fill all blanks", {autoClose: 1000})
@@ -45,27 +44,27 @@ function FormBook({create, file_path, upload, changeFilePath}) {
                 autoComplete="name"
                 autoFocus
             />
-            <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="author"
-                label="Author"
-                name="author"
-                autoComplete="author"
-                autoFocus
-            />
-            <TextField
-                margin="normal"
-                required
-                fullWidth
-                id="page_count"
-                label="Count of pages"
-                name="page_count"
-                autoComplete="page_count"
-                type='number'
-                autoFocus
-            />
+            {/*<TextField*/}
+            {/*    margin="normal"*/}
+            {/*    required*/}
+            {/*    fullWidth*/}
+            {/*    id="author"*/}
+            {/*    label="Author"*/}
+            {/*    name="author"*/}
+            {/*    autoComplete="author"*/}
+            {/*    autoFocus*/}
+            {/*/>*/}
+            {/*<TextField*/}
+            {/*    margin="normal"*/}
+            {/*    required*/}
+            {/*    fullWidth*/}
+            {/*    id="page_count"*/}
+            {/*    label="Count of pages"*/}
+            {/*    name="page_count"*/}
+            {/*    autoComplete="page_count"*/}
+            {/*    type='number'*/}
+            {/*    autoFocus*/}
+            {/*/>*/}
             <TextareaAutosize
                 name={'description'}
                 aria-label="Description"
@@ -96,4 +95,4 @@ function FormBook({create, file_path, upload, changeFilePath}) {
 }
 
 
-export default connect(({book: {file_path}}) => ({file_path}), {create, upload, changeFilePath})(FormBook)
+export default connect(({book: {file_path}}) => ({file_path}), {create, upload})(FormBook)
