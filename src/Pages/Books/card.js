@@ -14,7 +14,14 @@ import Slider from "react-slick";
 import {useState} from "react";
 import ModalForm from "../../components/modal/ModalForm";
 // export default connect(({book: {books}}) => ({books}), {getAll})(Cards)
-
+import maneken from "../../../src/images/maneken.jpg"
+import olov from '../../../src/images/olov.jpg'
+import tafsir from '../../images/tafsir.jpg'
+import saodat from '../../images/saodat.jpg'
+import emro from "../../images/emro.jpg"
+import ilm from '../../images/ilm.jpg'
+import haj from '../../images/hajjpg.jpg'
+import tarix from "../../images/tarix.jpg"
 const Item = styled(Box)(({theme}) => ({
     backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
     ...theme.typography.body2,
@@ -32,9 +39,11 @@ export default function BooksSlick() {
     // const basePath='https://adiblarxiyoboni.netlify.app/assets/images/'
     const settings = {
         infinite: true,
-        speed: 300,
+        speed: 1000,
         slidesToShow: 4,
         slidesToScroll: 4,
+        autoplay:true,
+        autoplaySpeed: 2000,
         responsive: [
             {
                 breakpoint: 1024,
@@ -77,49 +86,50 @@ export default function BooksSlick() {
             short_info: "37 000 UZS",
         },
         {
-            imgUrl:"https://adiblarxiyoboni.netlify.app/assets/images/book1.png",
+            imgUrl: `${maneken}`,
             name: " Imomning maneken qizi",
             author: "Omina Shenliko‘g‘li",
             short_info: "25 000 UZS",
         },
         {
-            imgUrl:"https://adiblarxiyoboni.netlify.app/assets/images/book1.png",
+            imgUrl:`${tafsir}`,
             name: "Tafsiri Hilol(6 jild)",
             author: "Shayx Muhammad Sodiq",
             short_info: "599 000 UZS",
         },
-        {    imgUrl:"https://adiblarxiyoboni.netlify.app/assets/images/book1.png",
+        {    imgUrl:`${saodat}`,
              name: "Kimyoiy saodat",
              author: "Abu Homid G'azolliy",
              short_info: "85 000 UZS",
         },
-        {            imgUrl:"https://adiblarxiyoboni.netlify.app/assets/images/book1.png",
+        {
+            imgUrl:`${haj}`,
 
             name: "Mo‘minning umr safari",
             author: "Shayx Muhammad Sodiq",
             short_info: "29 000 UZS",
         },
         {
-            imgUrl:"https://adiblarxiyoboni.netlify.app/assets/images/book1.png",
+            imgUrl:`${ilm}`,
             name: "Ilm olish sirlari",
             author: "Imom Zarnujiy",
             short_info: "45 000 UZS",
         },
 
         {
-            imgUrl:"https://adiblarxiyoboni.netlify.app/assets/images/book1.png",
+            imgUrl:`${emro}`,
             name: "Yunus Emro va tasavvuf",
             author: "Mahmud As’ad Jo‘shon",
             short_info: "25 000 UZS",
         },
         {
-            imgUrl:"https://adiblarxiyoboni.netlify.app/assets/images/book1.png",
+            imgUrl:`${tarix}`,
             name: "Islom tarixidan oltin sahifalar",
             author: "Umaviylar davri",
             short_info: "55 000 UZS",
         },
         {
-            imgUrl:"https://adiblarxiyoboni.netlify.app/assets/images/book1.png",
+            imgUrl:`${olov}`,
             name: "Hayotimni o‘zgartirgan olov",
             author: "Mahmud Olaqosh",
             short_info: "29 000 so'm",
@@ -154,7 +164,8 @@ export default function BooksSlick() {
                                            image={i.imgUrl}
 
                                            alt="wrong"
-                                           sx={{px: 2, py: 1,minHeight:"300px"}}
+                                           sx={{px: 2, py: 1,height:"300px"}}
+
 
                                        />
                                        <CardContent>
