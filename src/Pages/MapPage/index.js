@@ -17,12 +17,12 @@ function MapPage() {
                         fontWeight: "400",
                         lineHeight: "42px",
                         mb: 5,
-                        fontFamily:"Montserrat",
+                        fontFamily: "Montserrat",
                     }}
                 >
                     3d sayohat
                 </Typography>
-{/*<SimpleMap />*/}
+                {/*<SimpleMap/>*/}
             </Box>
         </div>
     );
