@@ -14,7 +14,6 @@ import Container from '@mui/material/Container';
 import {createTheme, ThemeProvider} from '@mui/material/styles';
 import {Button} from "@mui/material";
 import {useEffect} from "react";
-import Dashboard from "./Dashboard";
 import {useNavigate} from "react-router";
 import {toast} from "react-toastify";
 

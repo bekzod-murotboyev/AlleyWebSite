@@ -6,7 +6,7 @@ import Books from "./Books";
 import Picture from "./PicturePage";
 import Footer from "../components/Footer";
 import Video from "../Pages/VideoPage/video"
-import MapPage from "./MapPage";
+import Map from "./MapPage/Map";
 function Main() {
 
     return (
@@ -18,7 +18,7 @@ function Main() {
             <Writers/>
             <Books />
             <Picture/>
-            <MapPage />
+            {/*<Map zoomLevel={1}/>*/}
             <Footer/>
         </div>
     )
