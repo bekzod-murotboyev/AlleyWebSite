@@ -18,7 +18,7 @@ function Main() {
             <Writers/>
             <Books />
             <Picture/>
-            {/*<Map zoomLevel={1}/>*/}
+            {/*<Map zoomLevel={14}/>*/}
             <Footer/>
         </div>
     )

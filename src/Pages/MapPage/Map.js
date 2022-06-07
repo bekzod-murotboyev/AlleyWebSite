@@ -1,5 +1,6 @@
 // <script async defer src="https://maps.googleapis.com/maps/api/js?client=google-maps-embed&amp;paint_origin=&amp;libraries=geometry,search&amp;v=3.exp&amp;language=en_GB&amp;callback=onApiLoad"></script>
-
+// <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSECsV11t3FDisUFwLb5btHY-EWcP24uio&callback=initMap"></script>
+// AIzaSECsV11t3FDisUFwLb5btHY-EWcP24uio
 
 import React from 'react'
 import GoogleMapReact from 'google-map-react'
@@ -35,7 +36,7 @@ function Map({zoomLevel}) {
 
             <div className="google-map">
                 <GoogleMapReact
-                    bootstrapURLKeys={{key: ''}}
+                    bootstrapURLKeys={{key: 'AIzaSyDzsQvkwjNJ_AbvnLBEuZearzU-ORx74VI'}}
                     defaultCenter={location}
                     defaultZoom={zoomLevel}
                 >

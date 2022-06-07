@@ -68,7 +68,7 @@ function FormUser({create, getAll, universities}) {
                     onChange={handleChange}
                 >
                     {
-                        universities ? universities.map(item => <MenuItem value={item.id}>{item.abbr}</MenuItem>) : ''
+                        universities ? universities.map(item => <MenuItem value={item.id}>{item.name+' ('+item.abbr+')'}</MenuItem>) : ''
                     }
                 </Select>
             </FormControl>
