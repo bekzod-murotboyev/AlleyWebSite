@@ -22,7 +22,7 @@ function MapPage() {
                 >
                     3d sayohat
                 </Typography>
-                <SimpleMap/>
+                {/*<SimpleMap/>*/}
             </Box>
         </div>
     );
